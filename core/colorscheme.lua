@@ -8,4 +8,5 @@ end
 
 -- Todo
 -- 1. Explore how to modify colorschemes
--- 2. Create a minimal colorscheme
+-- 2. Modify catppuccin maybe?
+-- 3. Create a minimal colorscheme
