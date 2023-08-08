@@ -14,5 +14,20 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- appearance
-opt.termguicolors = false
+opt.termguicolors = true
 opt.background = "dark"
+
+-- split windows
+opt.splitright = true
+opt.splitbelow = true
+
+-- Todo
+-- 1. Comments
+--      1. off for single line ones
+--      2. on for multiline ones
+-- 2. Signcolumn
+--      1. understand it and set accordingly
+-- 3. Clipboard
+--      1. understand clipboard options
+--      2. find a way to integrate wsl clipboard
+--      3. also look at appending 'unnamedplus'
