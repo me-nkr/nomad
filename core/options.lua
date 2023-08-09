@@ -16,6 +16,7 @@ opt.smartcase = true
 -- appearance
 opt.termguicolors = true
 opt.background = "dark"
+opt.signcolumn = "yes"
 
 -- split windows
 opt.splitright = true

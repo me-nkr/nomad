@@ -8,6 +8,9 @@ Plug("catppuccin/nvim", {as = "catppuccin"})
 -- treesitter
 Plug("nvim-treesitter/nvim-treesitter", {['do'] = ':TSUpdate'})
 
+-- language server
+Plug "neovim/nvim-lspconfig"
+
 vim.call("plug#end")
 
 -- vim plug config

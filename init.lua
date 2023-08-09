@@ -16,3 +16,4 @@ require("nomad.core.keymaps")
 
 -- plugin configs
 require("nomad.plugins.treesitter")
+require("nomad.plugins.lspconfig")
