@@ -9,3 +9,10 @@ require("nomad.core.options")
 
 -- colorschemes
 require("nomad.core.colorscheme")
+
+-- keymaps
+require("nomad.core.keymaps")
+
+
+-- plugin configs
+require("nomad.plugins.treesitter")
