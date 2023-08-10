@@ -9,7 +9,7 @@ local keymap = vim.keymap -- aliasing
 
 -- config reload
 keymap.set("n", "<leader> ", ":RC<CR>")
-keymap.set("n", "<leader>con", ":lcd ~/.config/nvim/lua/nomad<CR>")
+keymap.set("n", "<leader>con", ":exe 'lcd' stdpath('config')..'/lua/nomad'<CR>")
 
 -----------------
 -- plugin keymaps
