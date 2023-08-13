@@ -22,6 +22,12 @@ opt.signcolumn = "yes"
 opt.splitright = true
 opt.splitbelow = true
 
+-- wrapping
+opt.showbreak = ">>"
+opt.linebreak = true
+opt.breakindent = true
+opt.breakindentopt = { 'shift:4', 'min:40', 'sbr' }
+
 -- Todo
 -- 1. Comments
 --      1. off for single line ones
