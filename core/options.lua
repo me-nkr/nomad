@@ -1,4 +1,6 @@
-local opt = vim.opt -- aliasing
+-- aliasing
+local opt = vim.opt
+local g = vim.g
 
 -- line number
 opt.number = true
@@ -27,6 +29,11 @@ opt.showbreak = ">>"
 opt.linebreak = true
 opt.breakindent = true
 opt.breakindentopt = { 'shift:4', 'min:40', 'sbr' }
+
+-- netrw
+g.netrw_preview = 1
+g.netrw_liststyle = 3
+g.netrw_winsize = 30
 
 -- Todo
 -- 1. Comments
