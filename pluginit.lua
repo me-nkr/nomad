@@ -1,6 +1,9 @@
 local Plug = vim.fn["plug#"]
 
-vim.call("plug#begin")
+local status = pcall(vim.call, "plug#begin")
+if not status then
+	return print("vim-plug not installed")
+end
 
 -- appearance
 Plug("catppuccin/nvim", {as = "catppuccin"})
