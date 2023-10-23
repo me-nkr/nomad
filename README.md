@@ -6,7 +6,7 @@ This is a neovim config, my first custom config actually.
 ## Current Features
 - Vim Plug as plugin manager
     - Find details in `pluginit.lua`
-- Catppuccin Macchiato for color scheme
+- VS Code like color scheme
 - Nvim Treesitter for syntax highlighting
 - Nvim Lspconfig for lsp
     - Typescript Language Server is being called ( install it using `npm i -g typescript typescript-language-server` )

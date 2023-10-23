@@ -1,12 +1,14 @@
--- set colorscheme to nightfly with protected call
+-- set colorscheme with protected call
 -- in case it isn't installed
-local status, _ = pcall(vim.cmd, "colorscheme catppuccin-macchiato")
-if not status then
-  print("Colorscheme not found!") -- print error if colorscheme not installed
-  return
+local colStatus, colors = pcall(require, "vscode.colors")
+local themeStatus, theme = pcall(require, "vscode")
+
+if not (colStatus and themeStatus) then
+    print("Colorscheme not found!")
+    return
 end
 
--- Todo
--- 1. Explore how to modify colorschemes
--- 2. Modify catppuccin maybe?
--- 3. Create a minimal colorscheme
+theme.setup({
+    italic_comments = true,
+})
+theme.load()

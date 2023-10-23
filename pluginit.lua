@@ -6,13 +6,16 @@ if not status then
 end
 
 -- appearance
-Plug("catppuccin/nvim", {as = "catppuccin"})
+Plug "Mofiqul/vscode.nvim"
 
 -- treesitter
 Plug("nvim-treesitter/nvim-treesitter", {['do'] = ':TSUpdate'})
 
 -- language server
 Plug "neovim/nvim-lspconfig"
+
+-- custom syntax
+Plug "sevko/vim-nand2tetris-syntax" -- nand2tetris custom languages
 
 vim.call("plug#end")
 
