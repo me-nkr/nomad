@@ -11,6 +11,9 @@ local keymap = vim.keymap -- aliasing
 keymap.set("n", "<leader> ", ":RC<CR>")
 keymap.set("n", "<leader>con", ":exe 'lcd' stdpath('config')..'/lua/nomad'<CR>")
 
+-- misc
+keymap.set("n", "<leader>ms", ":SP ")
+
 -----------------
 -- plugin keymaps
 -----------------

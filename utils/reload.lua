@@ -1,4 +1,4 @@
--- utility function apply config without closing
+-- utility function to apply config without closing
 
 vim.api.nvim_create_user_command('RC', function()
      for name,_ in pairs(package.loaded) do
