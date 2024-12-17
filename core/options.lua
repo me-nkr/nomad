@@ -11,6 +11,12 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
+-- folds
+opt.foldmethod = "expr"
+opt.foldcolumn = "0"
+opt.foldlevel = 999
+opt.foldtext = ""
+
 -- search
 opt.ignorecase = true
 opt.smartcase = true
