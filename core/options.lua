@@ -16,6 +16,7 @@ opt.autoindent = true
 
 -- folds
 opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldcolumn = "0"
 opt.foldlevel = 999
 opt.foldtext = ""
