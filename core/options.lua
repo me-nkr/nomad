@@ -2,6 +2,9 @@
 local opt = vim.opt
 local g = vim.g
 
+-- core
+opt.updatetime = 500
+
 -- line number
 opt.number = true
 

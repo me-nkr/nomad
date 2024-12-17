@@ -29,3 +29,8 @@ keymap.set("n", "<leader>pls", ":PlugStatus<CR>")
 -- treesitter
 keymap.set("n", "<leader>tsi", ":TSInstall")
 keymap.set("n", "<leader>tsm", ":TSModuleInfo<CR>")
+
+-- lsp
+keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+keymap.set("n", "<leader>rr", vim.lsp.buf.references)
+keymap.set("n", "<leader>ra", vim.lsp.buf.code_action)
