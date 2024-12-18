@@ -81,12 +81,12 @@ cmp.setup({
             elseif cmp.visible() then
                 cmp.open_docs()
             else
-                fallback()
+
             end
         end),
         ["<C-b>"] = cmp.mapping.scroll_docs(4),
         ["<C-f>"] = cmp.mapping.scroll_docs(-4),
-        ["<Space><Tab>"] = cmp.mapping.complete(),
+        ["<C-s>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<C-j>"] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select}),
         ["<C-k>"] = cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select}),

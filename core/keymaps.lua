@@ -1,7 +1,9 @@
+local keymap = vim.keymap -- aliasing
+
 -- map leader key to space
 vim.g.mapleader = " "
+keymap.set("i", "<Space>", "<Space>") -- disable leader in normal mode
 
-local keymap = vim.keymap -- aliasing
 
 -----------------
 -- editor keymaps
