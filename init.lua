@@ -17,7 +17,6 @@ require("nomad.core.keymaps")
 
 -- plugin configs
 require("nomad.plugins.treesitter")
-require("nomad.plugins.mason")
 require("nomad.plugins.lspconfig")
 require("nomad.plugins.autocomplete.plugins")
 require("nomad.plugins.autocomplete.nvimcmp")

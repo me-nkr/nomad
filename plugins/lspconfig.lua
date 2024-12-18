@@ -1,3 +1,15 @@
+-- import mason plugin safely
+local status, mason = pcall(require, "mason")
+if not status then
+  return print("mason.nvim not installed")
+end
+
+-- import mason-lspconfig plugin safely
+local status, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status then
+  return print("mason-lspconfig.nvim not installed")
+end
+
 -- import nvim-lspconfig plugin safely
 local status, lspconfig = pcall(require, "lspconfig")
 if not status then
@@ -10,6 +22,8 @@ if not status then
   return print("cmp-nvim-lsp not installed")
 end
 
+
+-- automatic hightlight and clear hightlight of tokens
 vim.api.nvim_create_autocmd("CursorHold", {
     callback = function ()
         vim.lsp.buf.document_highlight()
@@ -22,29 +36,17 @@ vim.api.nvim_create_autocmd("CursorMoved", {
     end
 })
 
-local installled_servers = (function ()
-    local status, mason_lspconfig = pcall(require, "mason-lspconfig")
-    if not status then
-        return {}
-    end
-    local installed_server_table = {}
-    for _, server_name in pairs(mason_lspconfig.get_installed_servers()) do
-        installed_server_table[server_name] = "installed"
-    end
-    return installed_server_table
-end)()
-
-local function config_server(server_name, config)
-    if installled_servers[server_name] == "installed" then
-        lspconfig[server_name].setup(config)
-    end
-end
 
 local nvim_cmp_capabilities = cmp_lsp.default_capabilities()
 
+local server_configs = {}
+
+local function config_server(server_name, settings)
+    server_configs[server_name] = settings
+end
+
+
 config_server("lua_ls", {
-    capabilities = nvim_cmp_capabilities,
-    settings = {
         Lua = {
             workspace = {
                 library = {
@@ -52,18 +54,24 @@ config_server("lua_ls", {
                     vim.fn.expand('$VIMRUNTIME/lua/vim/lsp'),
                 }
             }
-        }
     }
 })
 
 config_server("basedpyright", {
-    capabilities = nvim_cmp_capabilities,
+        basedpyright = {
+            typeCheckingMode = "standard"
+        }
 })
 
-config_server("lemminx", {
-    capabilities = nvim_cmp_capabilities,
-})
 
-config_server("ts_ls", {
-    capabilities = nvim_cmp_capabilities,
-})
+mason.setup()
+mason_lspconfig.setup()
+
+mason_lspconfig.setup_handlers {
+    function (server_name)
+        lspconfig[server_name].setup({
+            capabilities = nvim_cmp_capabilities,
+            settings = server_configs[server_name]
+        })
+    end
+}
