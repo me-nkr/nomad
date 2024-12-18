@@ -5,6 +5,9 @@ if not status then
 	return print("vim-plug not installed")
 end
 
+-- management
+Plug "tpope/vim-obsession"
+
 -- appearance
 Plug "Mofiqul/vscode.nvim"
 Plug "stevearc/dressing.nvim"
