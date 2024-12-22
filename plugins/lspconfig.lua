@@ -23,20 +23,6 @@ if not status then
 end
 
 
--- automatic hightlight and clear hightlight of tokens
-vim.api.nvim_create_autocmd("CursorHold", {
-    callback = function ()
-        vim.lsp.buf.document_highlight()
-    end
-})
-
-vim.api.nvim_create_autocmd("CursorMoved", {
-    callback = function ()
-        vim.lsp.buf.clear_references()
-    end
-})
-
-
 local nvim_cmp_capabilities = cmp_lsp.default_capabilities()
 
 local server_configs = {}
@@ -71,7 +57,26 @@ mason_lspconfig.setup_handlers {
     function (server_name)
         lspconfig[server_name].setup({
             capabilities = nvim_cmp_capabilities,
-            settings = server_configs[server_name]
+            settings = server_configs[server_name],
+            on_attach = function (client)
+
+                if client.server_capabilities.documentHighlightProvider then
+
+                    -- automatic hightlight and clear hightlight of tokens
+                    vim.api.nvim_create_autocmd("CursorHold", {
+                        callback = function ()
+                            vim.lsp.buf.document_highlight()
+                        end
+                    })
+
+                    vim.api.nvim_create_autocmd("CursorMoved", {
+                        callback = function ()
+                            vim.lsp.buf.clear_references()
+                        end
+                    })
+                end
+
+            end
         })
     end
 }
