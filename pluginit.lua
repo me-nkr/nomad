@@ -21,6 +21,9 @@ Plug "williamboman/mason.nvim"
 Plug "williamboman/mason-lspconfig.nvim"
 Plug "neovim/nvim-lspconfig"
 
+-- jupyter notebook
+Plug("benlubas/molten-nvim", {['do'] = ':UpdateRemotePlugins'})
+
 -- autocompletion
 Plug "hrsh7th/cmp-nvim-lsp"
 Plug "KadoBOT/cmp-plugins"
