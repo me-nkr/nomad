@@ -54,3 +54,22 @@ keymap.set("n", "<leader>noe", ":noa MoltenEnterOutput<CR>")
 keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 keymap.set("n", "<leader>rr", vim.lsp.buf.references)
 keymap.set("n", "<leader>ra", vim.lsp.buf.code_action)
+
+-----------------
+-- mouse keymaps
+-----------------
+
+keymap.set("n", "<MiddleMouse>", "<LeftMouse>K", { remap = true})
+keymap.set("n", "<C-MiddleMouse>", ":ccl<CR>")
+vim.cmd [[
+    amenu disable PopUp.How\-to\ disable\ mouse
+    amenu PopUp.-1-                         <NOP>
+    anoremenu PopUp.Rename                  <cmd>lua vim.lsp.buf.rename()<CR>
+    anoremenu PopUp.References              <cmd>lua vim.lsp.buf.references()<CR>
+    anoremenu PopUp.Code\ Actions           <cmd>lua vim.lsp.buf.code_action()<CR>
+    amenu PopUp.-2-                         <NOP>
+    anoremenu PopUp.Show\ Diagnostics       <cmd>lua vim.diagnostic.open_float()<CR>
+    amenu PopUp.-3-                         <NOP>
+    anoremenu PopUp.Back                    <C-O>
+]]
+
