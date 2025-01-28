@@ -10,4 +10,4 @@ vim.api.nvim_create_user_command('SP', function(filetype)
     vim.opt.buftype = "nofile"
     vim.opt.bufhidden = "hide"
     vim.opt.filetype = filetype
-end, {nargs = "*", complete = "filetype"})
+end, {nargs = "?", complete = "filetype"})

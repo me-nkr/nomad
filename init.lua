@@ -14,6 +14,9 @@ require("nomad.core.colorscheme")
 -- keymaps
 require("nomad.core.keymaps")
 
+-- tabline
+require("nomad.core.tabline")
+
 
 -- plugin configs
 require("nomad.plugins.treesitter")
