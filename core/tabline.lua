@@ -16,6 +16,7 @@ function TabLine()
 
     for _, tabid in ipairs(vim.api.nvim_list_tabpages()) do
 
+        local tab_number = vim.api.nvim_tabpage_get_number(tabid)
         local windows = vim.api.nvim_tabpage_list_wins(tabid)
         local mod = (
             function()
@@ -34,15 +35,18 @@ function TabLine()
             s = s .. '%#TabLine#'
         end
 
-        s = s .. '%' .. tabid .. 'T' .. ' ' .. #windows .. ' '
+        s = s .. '%' .. tabid .. 'T' .. ' [(' .. tab_number .. ') '
+
+        local tabname = vim.t[tabid].tabname or vim.fn.fnamemodify(vim.fn.getcwd(-1, tab_number), ":t")
+
+        s = s .. '%' .. tabid .. 'T' .. tabname .. ' <' .. #windows
 
         if mod then
-            s = s .. "+ "
+            s = s .. "+"
         end
 
-        local tabname = vim.t[tabid].tabname or vim.fn.fnamemodify(vim.fn.getcwd(-1, vim.api.nvim_tabpage_get_number(tabid)), ":t")
+        s = s .. '>] '
 
-        s = s .. '%' .. tabid .. 'T' .. tabname .. ' '
     end
 
     s = s .. '%#TabLineFill#%T'
