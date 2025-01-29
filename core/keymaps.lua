@@ -24,6 +24,10 @@ keymap.set("n", "<leader>ms", ":SP ")
 -- plugin keymaps
 -----------------
 
+-- netrw
+keymap.set("n", "<leader>fe", ":Lex!<CR>")
+keymap.set("n", "<leader>fo", ":Lex! ")
+
 -- vim-plug
 keymap.set("n", "<leader>pli", ":PlugInstall<CR>")
 keymap.set("n", "<leader>pls", ":PlugStatus<CR>")

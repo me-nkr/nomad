@@ -43,8 +43,9 @@ opt.breakindentopt = { 'shift:4', 'min:40', 'sbr' }
 -- netrw
 g.netrw_preview = 1
 g.netrw_liststyle = 3
-g.netrw_winsize = 30
+g.netrw_winsize = 20
 g.netrw_banner = 0
+-- g.netrw_keepdir = 0
 
 -- Todo
 -- 1. Comments
