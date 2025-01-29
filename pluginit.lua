@@ -12,6 +12,7 @@ Plug "tpope/vim-obsession"
 Plug "Mofiqul/vscode.nvim"
 Plug "stevearc/dressing.nvim"
 Plug "onsails/lspkind.nvim"
+Plug "catgoose/nvim-colorizer.lua"
 
 -- treesitter
 Plug("nvim-treesitter/nvim-treesitter", {['do'] = ':TSUpdate'})
