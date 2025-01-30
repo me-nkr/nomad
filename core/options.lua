@@ -47,6 +47,9 @@ g.netrw_winsize = 20
 g.netrw_banner = 0
 -- g.netrw_keepdir = 0
 
+-- statusline
+opt.statusline = "(%{winnr()}) %f %h%m%r%= %-14.(%l,%c%V%) %P <%n>%<"
+
 -- Todo
 -- 1. Comments
 --      1. off for single line ones
