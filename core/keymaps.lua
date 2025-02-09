@@ -9,6 +9,12 @@ keymap.set("i", "<Space>", "<Space>") -- disable leader in normal mode
 -- editor keymaps
 -----------------
 
+-- window
+keymap.set("n", "<leader>wm", ":res<CR>:vert res<CR>")
+
+-- misc
+keymap.set("n", "<leader>ms", ":SP ")
+
 -----------------
 -- config keymaps
 -----------------
@@ -16,9 +22,6 @@ keymap.set("i", "<Space>", "<Space>") -- disable leader in normal mode
 -- config reload
 keymap.set("n", "<leader> ", ":RC<CR>")
 keymap.set("n", "<leader>con", ":exe 'lcd' stdpath('config')..'/lua/nomad'<CR>")
-
--- misc
-keymap.set("n", "<leader>ms", ":SP ")
 
 -----------------
 -- plugin keymaps
