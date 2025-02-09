@@ -5,6 +5,9 @@ local g = vim.g
 -- core
 opt.updatetime = 500
 
+-- file search
+opt.path = opt.path + "**"
+
 -- line number
 opt.number = true
 
