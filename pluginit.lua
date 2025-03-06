@@ -40,6 +40,9 @@ Plug "hrsh7th/nvim-cmp"
 Plug "hrsh7th/cmp-vsnip"
 Plug "hrsh7th/vim-vsnip"
 
+-- snippets
+Plug "rafamadriz/friendly-snippets"
+
 -- custom syntax
 Plug "sevko/vim-nand2tetris-syntax" -- nand2tetris custom languages
 
