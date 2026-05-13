@@ -1,6 +1,7 @@
 -- utils
 require("nomad.utils.reload")
 require("nomad.utils.scratchpad")
+require("nomad.utils.help")
 
 -- vim plug
 require("nomad.pluginit")
